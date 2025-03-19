@@ -77,7 +77,11 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'bd_psico',
+        'USER': 'root',  # Usuario de la base de datos
+        'PASSWORD': '',  # Contraseña de la base de datos
+        'HOST': 'localhost',  # Dirección del servidor (cambia si usas un servidor remoto)
+        'PORT': '3306',  # Puerto (5432 para PostgreSQL, 3306 para MySQL)
     }
 }
 
