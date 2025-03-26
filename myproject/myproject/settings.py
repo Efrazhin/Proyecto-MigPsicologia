@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'myadmin.Usuario'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'psicologa_dashboard'  # Por defecto, pero lo controlamos en la vista
 
 # Application definition
 
@@ -37,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp.apps.MyappConfig'
+    'myapp',
+    'myadmin'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +86,7 @@ DATABASES = {
         'USER': 'root',  # Usuario de la base de datos
         'PASSWORD': '',  # Contraseña de la base de datos
         'HOST': 'localhost',  # Dirección del servidor (cambia si usas un servidor remoto)
-        'PORT': '3306',  # Puerto (5432 para PostgreSQL, 3306 para MySQL)
+        'PORT': '3306',  # Puerto 
     }
 }
 
