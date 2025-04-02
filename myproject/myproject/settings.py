@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'myadmin.Usuario'
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'psicologa_dashboard'  # Por defecto, pero lo controlamos en la vista
+LOGIN_REDIRECT_URL = 'admin-panel/'  # Por defecto, pero lo controlamos en la vista
 
 # Application definition
 

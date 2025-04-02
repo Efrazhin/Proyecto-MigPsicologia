@@ -1,0 +1,59 @@
+<!-- templates/account/registro.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <h2 class="text-2xl font-bold mb-6 text-center">Registro</h2>
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+
+      <div>
+        <label for="id_email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        {{ form.email }}
+      </div>
+
+      <div>
+        <label for="id_nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+        {{ form.nombre }}
+      </div>
+
+      <div>
+        <label for="id_rol" class="block text-sm font-medium text-gray-700">Rol</label>
+        {{ form.rol }}
+      </div>
+
+      <div>
+        <label for="id_password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        {{ form.password }}
+      </div>
+
+      {% if form.errors %}
+        <ul class="text-red-500 text-sm">
+          {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <button type="submit"
+              class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-200">
+        Registrarse
+      </button>
+    </form>
+
+    <p class="mt-4 text-center text-sm text-gray-600">
+      ¿Ya tienes cuenta? <a href="{% url 'login' %}" class="text-green-500 hover:underline">Inicia sesión</a>
+    </p>
+  </div>
+
+</body>
+</html>

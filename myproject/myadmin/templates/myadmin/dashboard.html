@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 min-h-screen">
+  <div class="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow">
+    <h1 class="text-2xl font-bold mb-4">Panel de {{ rol|title }}</h1>
+    <p class="text-sm text-gray-600 mb-6">Usuario: {{ request.user.nombre }}</p>
+
+    {% if rol == 'admin' %}
+      {% include 'paneles/admin_panel.html' %}
+    {% elif rol == 'secretaria' %}
+      {% include 'paneles/secretaria_panel.html' %}
+    {% elif rol == 'psicologa' %}
+      {% include 'paneles/psicologa_panel.html' %}
+    {% else %}
+      <p>No tienes acceso a este panel.</p>
+    {% endif %}
+
+    <div class="mt-6 text-center">
+      <a href="{% url 'logout' %}" class="text-red-500 hover:underline">Cerrar sesión</a>
+    </div>
+  </div>
+</body>
+</html>

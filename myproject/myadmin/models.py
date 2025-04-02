@@ -82,7 +82,6 @@ class Psicologo(models.Model):
 class Servicio(models.Model):
     nombre = models.CharField(max_length=150)
     descripcion = models.TextField()
-    duracion_min = models.IntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     estado = models.BooleanField(default=True)
 
