@@ -7,7 +7,7 @@
     <title>AdminLTE v4 | Dashboard</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="AdminLTE v4 | Dashboard" />
+    <meta name="title" content="Panel de admin" />
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
@@ -19,6 +19,7 @@
     />
     <!--end::Primary Meta Tags-->
     <!--begin::Fonts-->
+    <link rel="stylesheet" href="{% static 'myadmin/dist/css/adminlte.css'%}">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
@@ -310,7 +311,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="{% url 'dashboard2'%}" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v2</p>
                     </a>

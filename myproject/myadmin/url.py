@@ -8,6 +8,7 @@ urlpatterns = [
     
     # Dashboards por rol
     path('dashboard', views.dashboard_view, name='dashboard'),
+    path('dashboard2',views.dashboard2_view, name='dashboard2'),
     path('admin/dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('secretaria/dashboard/', views.secretaria_dashboard, name='secretaria_dashboard'),
 

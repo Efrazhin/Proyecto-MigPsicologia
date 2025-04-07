@@ -68,3 +68,8 @@ def acceso_denegado(request):
 def dashboard_view(request):
     rol = request.user.rol
     return render(request, 'myadmin/index.html', {'rol': rol})
+
+@login_required
+def dashboard2_view(request):
+    rol = request.user.rol
+    return render(request, 'myadmin/index2.html', {'rol': rol})
