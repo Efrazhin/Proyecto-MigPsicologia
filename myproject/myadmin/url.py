@@ -2,12 +2,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('login/', views.login_view, name='login'),
+    path('', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('registro/', views.registro_view, name='registro'),
     
     # Dashboards por rol
-    path('', views.dashboard_view, name='dashboard'),
+    path('dashboard', views.dashboard_view, name='dashboard'),
     path('admin/dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('secretaria/dashboard/', views.secretaria_dashboard, name='secretaria_dashboard'),
 

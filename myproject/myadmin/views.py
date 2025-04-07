@@ -46,19 +46,19 @@ def logout_view(request):
 @login_required
 @solo_rol('admin')
 def admin_dashboard(request):
-    return render(request, "myadmin/dashboard.html")
+    return render(request, "myadmin/index.html")
 
 # Panel de secretaria
 @login_required
 @solo_rol('secretaria')
 def secretaria_dashboard(request):
-    return render(request, "myadmin/dashboard.html")
+    return render(request, "myadmin/index.html")
 
 # Panel de psicóloga
 @login_required
 @solo_rol('psicologa')
 def dashboard_view(request):
-    return render(request, 'myadmin/dashboard.html')
+    return render(request, 'myadmin/index.html')
 
 # Vista de acceso denegado
 def acceso_denegado(request):
@@ -67,4 +67,4 @@ def acceso_denegado(request):
 @login_required
 def dashboard_view(request):
     rol = request.user.rol
-    return render(request, 'myadmin/dashboard.html', {'rol': rol})
+    return render(request, 'myadmin/index.html', {'rol': rol})
