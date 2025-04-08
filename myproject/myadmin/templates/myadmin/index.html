@@ -65,8 +65,14 @@
   <!--begin::Body-->
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
+
+
     <div class="app-wrapper">
+
+
       <!--begin::Header-->
+
+      <!------------------------------Barra superior " NavBar "------------------------------>
       <nav class="app-header navbar navbar-expand bg-body">
         <!--begin::Container-->
         <div class="container-fluid">
@@ -96,118 +102,11 @@
                 <i class="bi bi-chat-text"></i>
                 <span class="navbar-badge badge text-bg-danger">3</span>
               </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                <a href="#" class="dropdown-item">
-                  <!--begin::Message-->
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <img
-                        src="{% static 'dist/assets/img/user1-128x128.jpg' %}" 
-                        alt="User Avatar"
-                        class="img-size-50 rounded-circle me-3"
-                      />
-                    </div>
-                    <div class="flex-grow-1">
-                      <h3 class="dropdown-item-title">
-                        Brad Diesel
-                        <span class="float-end fs-7 text-danger"
-                          ><i class="bi bi-star-fill"></i
-                        ></span>
-                      </h3>
-                      <p class="fs-7">Call me whenever you can...</p>
-                      <p class="fs-7 text-secondary">
-                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                  <!--end::Message-->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <!--begin::Message-->
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <img
-                        src="{% static 'dist/assets/img/user8-128x128.jpg' %}" 
-                        alt="User Avatar"
-                        class="img-size-50 rounded-circle me-3"
-                      />
-                    </div>
-                    <div class="flex-grow-1">
-                      <h3 class="dropdown-item-title">
-                        John Pierce
-                        <span class="float-end fs-7 text-secondary">
-                          <i class="bi bi-star-fill"></i>
-                        </span>
-                      </h3>
-                      <p class="fs-7">I got your message bro</p>
-                      <p class="fs-7 text-secondary">
-                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                  <!--end::Message-->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <!--begin::Message-->
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <img
-                        src="{% static 'dist/assets/img/user3-128x128.jpg' %}" 
-                        alt="User Avatar"
-                        class="img-size-50 rounded-circle me-3"
-                      />
-                    </div>
-                    <div class="flex-grow-1">
-                      <h3 class="dropdown-item-title">
-                        Nora Silvester
-                        <span class="float-end fs-7 text-warning">
-                          <i class="bi bi-star-fill"></i>
-                        </span>
-                      </h3>
-                      <p class="fs-7">The subject goes here</p>
-                      <p class="fs-7 text-secondary">
-                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                  <!--end::Message-->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-              </div>
+              
             </li>
             <!--end::Messages Dropdown Menu-->
             <!--begin::Notifications Dropdown Menu-->
-            <li class="nav-item dropdown">
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">
-                <i class="bi bi-bell-fill"></i>
-                <span class="navbar-badge badge text-bg-warning">15</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                <span class="dropdown-item dropdown-header">15 Notifications</span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="bi bi-envelope me-2"></i> 4 new messages
-                  <span class="float-end text-secondary fs-7">3 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="bi bi-people-fill me-2"></i> 8 friend requests
-                  <span class="float-end text-secondary fs-7">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
-                  <span class="float-end text-secondary fs-7">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
-              </div>
-            </li>
-            <!--end::Notifications Dropdown Menu-->
-            <!--begin::Fullscreen Toggle-->
+            
             <li class="nav-item">
               <a class="nav-link" href="#" data-lte-toggle="fullscreen">
                 <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
@@ -219,7 +118,7 @@
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="{% static 'dist/assets/img/user2-160x160.jpg' %}" 
+                  src="{% static 'dist/assets/img/ftoperfil.png' %}" 
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
@@ -264,13 +163,17 @@
         </div>
         <!--end::Container-->
       </nav>
+
+      <!-------------------------Fin de la Barra superior " NavBar "----------------------->
+
       <!--end::Header-->
-      <!--begin::Sidebar-->
+
+      <!------------------------Inicio Barra Lateral--------------------------------------->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
         <!--begin::Sidebar Brand-->
         <div class="sidebar-brand">
           <!--begin::Brand Link-->
-          <a href="./index.html" class="brand-link">
+          <a href="{% url 'dashboard'%}" class="brand-link">
             <!--begin::Brand Image-->
             <img
               src="{% static 'dist/assets/img/AdminLTELogo.png' %}" 
@@ -412,36 +315,6 @@
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-tree-fill"></i>
-                  <p>
-                    UI Elements
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./UI/general.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>General</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./UI/icons.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Icons</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./UI/timeline.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Timeline</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-pencil-square"></i>
@@ -713,7 +586,14 @@
         </div>
         <!--end::Sidebar Wrapper-->
       </aside>
+
+      <!-------------------------Fin de la Barra Laterael----------------------->
       <!--end::Sidebar-->
+
+
+      <!-------------------------Inicio de la app----------------------->
+
+
       <!--begin::App Main-->
       <main class="app-main">
         <!--begin::App Content Header-->
@@ -722,10 +602,10 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Dashboard</h3></div>
+              <div class="col-sm-6"><h3 class="mb-0">Panel de control</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'dashboard'%}">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                 </ol>
               </div>
@@ -741,9 +621,10 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <!--begin::Col-->
+
+              <!-------------------------Carta 1---------------------------->
+              
               <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 1-->
                 <div class="small-box text-bg-primary">
                   <div class="inner">
                     <h3>150</h3>
@@ -767,11 +648,11 @@
                     More info <i class="bi bi-link-45deg"></i>
                   </a>
                 </div>
-                <!--end::Small Box Widget 1-->
               </div>
-              <!--end::Col-->
+              <!-------------------------Fin Carta 1---------------------------->
+
+              <!-------------------------Carta 2---------------------------->
               <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 2-->
                 <div class="small-box text-bg-success">
                   <div class="inner">
                     <h3>53<sup class="fs-5">%</sup></h3>
@@ -795,11 +676,12 @@
                     More info <i class="bi bi-link-45deg"></i>
                   </a>
                 </div>
-                <!--end::Small Box Widget 2-->
               </div>
-              <!--end::Col-->
+              <!-------------------------Fin Carta 2---------------------------->
+
+              <!-------------------------Carta 3---------------------------->
+
               <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 3-->
                 <div class="small-box text-bg-warning">
                   <div class="inner">
                     <h3>44</h3>
@@ -823,11 +705,12 @@
                     More info <i class="bi bi-link-45deg"></i>
                   </a>
                 </div>
-                <!--end::Small Box Widget 3-->
               </div>
-              <!--end::Col-->
+              <!-------------------------fIn Carta 3---------------------------->
+
+              <!-------------------------Carta 4---------------------------->
+
               <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 4-->
                 <div class="small-box text-bg-danger">
                   <div class="inner">
                     <h3>65</h3>
@@ -857,264 +740,33 @@
                   >
                     More info <i class="bi bi-link-45deg"></i>
                   </a>
-                </div>
-                <!--end::Small Box Widget 4-->
+                </div>  
               </div>
-              <!--end::Col-->
+              <!-------------------------Fin Carta 4---------------------------->
+
+
             </div>
             <!--end::Row-->
             <!--begin::Row-->
+
             <div class="row">
-              <!-- Start col -->
+
+              <!-------------------------Panel 1--------------------------->
+
               <div class="col-lg-7 connectedSortable">
                 <div class="card mb-4">
                   <div class="card-header"><h3 class="card-title">Sales Value</h3></div>
                   <div class="card-body"><div id="revenue-chart"></div></div>
                 </div>
-                <!-- /.card -->
-                <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-primary mb-4">
-                  <div class="card-header">
-                    <h3 class="card-title">Direct Chat</h3>
-                    <div class="card-tools">
-                      <span title="3 New Messages" class="badge text-bg-primary"> 3 </span>
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-tool"
-                        title="Contacts"
-                        data-lte-toggle="chat-pane"
-                      >
-                        <i class="bi bi-chat-text-fill"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
-                        <i class="bi bi-x-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
-                      <!-- Message. Default to the start -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-start"> Alexander Pierce </span>
-                          <span class="direct-chat-timestamp float-end"> 23 Jan 2:00 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="{% static 'dist/assets/img/user1-128x128.jpg' %}" 
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Is this template really for free? That's unbelievable!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-                      <!-- Message to the end -->
-                      <div class="direct-chat-msg end">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-end"> Sarah Bullock </span>
-                          <span class="direct-chat-timestamp float-start"> 23 Jan 2:05 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="{% static 'dist/assets/img/user3-128x128.jpg' %}" 
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">You better believe it!</div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-                      <!-- Message. Default to the start -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-start"> Alexander Pierce </span>
-                          <span class="direct-chat-timestamp float-end"> 23 Jan 5:37 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="{% static 'dist/assets/img/user1-128x128.jpg' %}" 
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Working with AdminLTE on a great new app! Wanna join?
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-                      <!-- Message to the end -->
-                      <div class="direct-chat-msg end">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-end"> Sarah Bullock </span>
-                          <span class="direct-chat-timestamp float-start"> 23 Jan 6:10 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="{% static 'dist/assets/img/user3-128x128.jpg' %}" 
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">I would love to.</div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-                    </div>
-                    <!-- /.direct-chat-messages-->
-                    <!-- Contacts are loaded here -->
-                    <div class="direct-chat-contacts">
-                      <ul class="contacts-list">
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="{% static 'dist/assets/img/user1-128x128.jpg' %}" 
-                              alt="User Avatar"
-                            />
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Count Dracula
-                                <small class="contacts-list-date float-end"> 2/28/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> How have you been? I was... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="{% static 'dist/assets/img/user7-128x128.jpg' %}" 
-                              alt="User Avatar"
-                            />
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Sarah Doe
-                                <small class="contacts-list-date float-end"> 2/23/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> I will be waiting for... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="{% static 'dist/assets/img/user3-128x128.jpg' %}" 
-                              alt="User Avatar"
-                            />
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nadia Jolie
-                                <small class="contacts-list-date float-end"> 2/20/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> I'll call you back at... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="{% static 'dist/assets/img/user5-128x128.jpg' %}" 
-                              alt="User Avatar"
-                            />
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nora S. Vans
-                                <small class="contacts-list-date float-end"> 2/10/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> Where is your new... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="{% static 'dist/assets/img/user6-128x128.jpg' %}" 
-                              alt="User Avatar"
-                            />
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                John K.
-                                <small class="contacts-list-date float-end"> 1/27/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> Can I take a look at... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="{% static 'dist/assets/img/user8-128x128.jpg' %}" 
-                              alt="User Avatar"
-                            />
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Kenneth M.
-                                <small class="contacts-list-date float-end"> 1/4/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> Never mind I found... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                      </ul>
-                      <!-- /.contacts-list -->
-                    </div>
-                    <!-- /.direct-chat-pane -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer">
-                    <form action="#" method="post">
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          name="message"
-                          placeholder="Type Message ..."
-                          class="form-control"
-                        />
-                        <span class="input-group-append">
-                          <button type="button" class="btn btn-primary">Send</button>
-                        </span>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.card-footer-->
-                </div>
-                <!-- /.direct-chat -->
               </div>
-              <!-- /.Start col -->
-              <!-- Start col -->
+
+
+              <!-------------------------Panel 2---------------------------->
+
               <div class="col-lg-5 connectedSortable">
                 <div class="card text-white bg-primary bg-gradient border-primary mb-4">
                   <div class="card-header border-0">
-                    <h3 class="card-title">Sales Value</h3>
+                    <h3 class="card-title">Mapa</h3>
                     <div class="card-tools">
                       <button
                         type="button"
@@ -1143,19 +795,24 @@
                         <div class="text-white">Sales</div>
                       </div>
                     </div>
-                    <!--end::Row-->
                   </div>
                 </div>
               </div>
-              <!-- /.Start col -->
+
+              <!-------------------------Fin Panel 2---------------------------->
+
             </div>
-            <!-- /.row (main row) -->
           </div>
           <!--end::Container-->
         </div>
         <!--end::App Content-->
       </main>
       <!--end::App Main-->
+
+
+      <!------------------------------Fin de la app----------------------------->
+
+      <!------------------------------Inicio Footer---------------------------->
       <!--begin::Footer-->
       <footer class="app-footer">
         <!--begin::To the end-->
@@ -1169,7 +826,8 @@
         All rights reserved.
         <!--end::Copyright-->
       </footer>
-      <!--end::Footer-->
+      <!-------------------------------Fin del Footer---------------------------->
+
     </div>
     <!--end::App Wrapper-->
     <!--begin::Script-->
