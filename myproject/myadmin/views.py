@@ -73,3 +73,13 @@ def dashboard_view(request):
 def dashboard2_view(request):
     rol = request.user.rol
     return render(request, 'myadmin/index2.html', {'rol': rol})
+
+@login_required
+def dashboard3_view(request):
+    rol = request.user.rol
+    return render(request, 'myadmin/index3.html', {'rol': rol})
+
+@login_required
+def theme_view(request):
+    rol = request.user.rol
+    return render(request, 'myadmin/generate/theme.html', {'rol':rol})
