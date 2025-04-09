@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'myadmin.Usuario'
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'admin-panel/'  # Por defecto, pero lo controlamos en la vista
 
 # Application definition
 
@@ -81,7 +80,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bd_psico',
         'USER': 'root',  # Usuario de la base de datos
         'PASSWORD': '',  # Contraseña de la base de datos

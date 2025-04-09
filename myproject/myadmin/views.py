@@ -33,6 +33,7 @@ def login_view(request):
                     return redirect('psicologa_dashboard')
             else:
                 form.add_error(None, "Email o contraseña incorrectos")
+            return render(request, 'myadmin/index.html', {'user': usuario})
     else:
         form = LoginForm()
     return render(request, "account/login.html", {"form": form})
@@ -68,18 +69,3 @@ def acceso_denegado(request):
 def dashboard_view(request):
     rol = request.user.rol
     return render(request, 'myadmin/index.html', {'rol': rol})
-
-@login_required
-def dashboard2_view(request):
-    rol = request.user.rol
-    return render(request, 'myadmin/index2.html', {'rol': rol})
-
-@login_required
-def dashboard3_view(request):
-    rol = request.user.rol
-    return render(request, 'myadmin/index3.html', {'rol': rol})
-
-@login_required
-def theme_view(request):
-    rol = request.user.rol
-    return render(request, 'myadmin/generate/theme.html', {'rol':rol})
