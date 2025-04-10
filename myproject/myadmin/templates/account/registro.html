@@ -11,44 +11,55 @@
 
   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
     <h2 class="text-2xl font-bold mb-6 text-center">Registro</h2>
-    <form method="post" class="space-y-4">
+
+    <form method="post" class="space-y-4" enctype="multipart/form-data">
       {% csrf_token %}
-
+  
       <div>
-        <label for="id_email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        <label for="id_email">Correo electrónico</label>
         {{ form.email }}
-      </div>
+    </div>
 
-      <div>
-        <label for="id_nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+    <div>
+        <label for="id_nombre">Nombre</label>
         {{ form.nombre }}
-      </div>
+    </div>
 
-      <div>
-        <label for="id_rol" class="block text-sm font-medium text-gray-700">Rol</label>
+    <div>
+        <label for="id_rol">Rol</label>
         {{ form.rol }}
-      </div>
+    </div>
 
-      <div>
-        <label for="id_password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-        {{ form.password }}
-      </div>
+    <div>
+        <label for="id_password">Contraseña</label>
+        <input type="password" name="password" id="id_password" required>
+    </div>
+
+    <div>
+        <label for="id_confirm_password">Confirmar Contraseña</label>
+        <input type="password" name="confirm_password" id="id_confirm_password" required>
+    </div>
+
+    <div>
+        <label for="id_profile_picture">Foto de Perfil</label>
+        <input type="file" name="profile_picture" id="id_profile_picture">
+    </div>
 
       {% if form.errors %}
-        <ul class="text-red-500 text-sm">
-          {% for field, errors in form.errors.items %}
-            {% for error in errors %}
-              <li>{{ error }}</li>
-            {% endfor %}
-          {% endfor %}
-        </ul>
+          <ul class="text-red-500 text-sm">
+              {% for field, errors in form.errors.items %}
+                  {% for error in errors %}
+                      <li>{{ error }}</li>
+                  {% endfor %}
+              {% endfor %}
+          </ul>
       {% endif %}
-
+  
       <button type="submit"
               class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-200">
-        Registrarse
+          Registrarse
       </button>
-    </form>
+  </form>
 
     <p class="mt-4 text-center text-sm text-gray-600">
       ¿Ya tienes cuenta? <a href="{% url 'login' %}" class="text-green-500 hover:underline">Inicia sesión</a>

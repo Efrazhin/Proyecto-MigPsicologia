@@ -4,7 +4,15 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE v4 | Dashboard</title>
+    <title>Dashboard</title>
+    <script>
+      setTimeout(function() {
+        let alert = document.querySelector(".alert");
+        if (alert) {
+          alert.style.display = "none";
+        }
+      }, 6000); // Desaparece después de 4 segundos
+  </script>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Panel de admin" />
@@ -20,6 +28,9 @@
     <!--end::Primary Meta Tags-->
     <!--begin::Fonts-->
     <link rel="stylesheet" href="{% static 'myadmin/dist/css/adminlte.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
@@ -57,18 +68,23 @@
       integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
       crossorigin="anonymous"
     />
+    
   </head>
   <!--end::Head-->
-  <!--begin::Body-->
+    
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
 
+    {% if messages %}
+    <div class="welcome-message">
+      {% for message in messages %}
+        <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+          {{ message }}
+         </div>
+      {% endfor %}
+    </div>
+    {% endif %}
 
     <div class="app-wrapper">
-
-
-      <!--begin::Header-->
-
       <!------------------------------Barra superior " NavBar "------------------------------>
       <nav class="app-header navbar navbar-expand bg-body">
         <!--begin::Container-->
@@ -80,51 +96,50 @@
                 <i class="bi bi-list"></i>
               </a>
             </li>
-            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li>
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="nav-link">
+                Cerrar Sesión
+              </button>
+            </form>
+          {% endif %}
+
           </ul>
           <!--end::Start Navbar Links-->
           <!--begin::End Navbar Links-->
           <ul class="navbar-nav ms-auto">
-            <!--begin::Navbar Search-->
-          
-            <!--end::Messages Dropdown Menu-->
-            <!--begin::Notifications Dropdown Menu-->
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
-                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
-                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none"></i>
-              </a>
-            </li>
-            <!--end::Fullscreen Toggle-->
-            <!--begin::User Menu Dropdown-->
-
-
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img
-                  src="{% static 'myadmin/dist/assets/img/ftoperfil.png' %}" 
-                  class="user-image rounded-circle shadow"
-                  alt="User Image"
-                />
-                <span class="d-none d-md-inline">Alexander Pierce</span>
+                {% if user.profile_picture %}
+                  <img 
+                    src="{{ user.profile_picture.url }}" 
+                    class="user-image rounded-circle shadow"
+                    alt="User Image"
+                  />
+                {% else %}
+                  <i class="bi bi-person-circle fs-3 text-secondary"></i>
+                {% endif %}
+                <span class="d-none d-md-inline">{{ user.nombre }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
-                  <img
-                    src="{% static 'myadmin/dist/assets/img/ftoperfil.png' %}"  
-                    class="rounded-circle shadow"
-                    alt="User Image"
-                  />
                   {% if user.is_authenticated %}
-                    <p>Hola, {{ user.nombre }}!</p>
-                    <p>Bienvenido a tu panel de usuario.</p>
+                      <!-- 🖼️ Foto de perfil en la parte azul -->
+                      {% if user.profile_picture %}
+                        <img src="{{ user.profile_picture.url }}" alt="Foto de perfil" width="80" class="user-image rounded-circle shadow">
+                      {% else %}
+                       <i class="bi bi-person-circle fs-2 text-secondary"></i>
+                      {% endif %}
+                      
+                      <!-- 👤 Información del usuario -->
+                      <p class="mt-2">Hola, {{ user.nombre }}!</p>
+                      <p>Bienvenido a tu panel de {{ user.rol }}.</p>
                   {% else %}
-                    <p>Por favor, inicia sesión para ver tu nombre.</p>
+                    <p>Por favor, inicia sesión para ver tu perfil.</p>
                   {% endif %}
-                </li>
+              </li>
                 <!--end::User Image-->
                 <!--begin::Menu Body-->
                 <li class="user-body">
@@ -163,15 +178,8 @@
         <div class="sidebar-brand">
           <!--begin::Brand Link-->
           <a href="{% url 'dashboard'%}" class="brand-link">
-            <!--begin::Brand Image-->
-            <img
-              src="{% static 'dist/assets/img/AdminLTELogo.png' %}" 
-              alt="AdminLTE Logo"
-              class="brand-image opacity-75 shadow"
-            />
-            <!--end::Brand Image-->
             <!--begin::Brand Text-->
-            <span class="brand-text fw-light">AdminLTE 4</span>
+            <span class="brand-text fw-light">Panel de control</span>
             <!--end::Brand Text-->
           </a>
           <!--end::Brand Link-->
@@ -350,6 +358,7 @@
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
+
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
       integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ="
@@ -369,8 +378,6 @@
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
     <script src="{% static 'dist/js/adminlte.js' %}" ></script>
-
-
   </body>
   <!--end::Body-->
 </html>

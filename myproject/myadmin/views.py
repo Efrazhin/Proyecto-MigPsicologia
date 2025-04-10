@@ -1,42 +1,56 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import LoginForm, RegistroForm
 from .models import Usuario
 from .decoradores import solo_rol
+import logging
+
 
 def registro_view(request):
-    if request.method == 'POST':
-        form = RegistroForm(request.POST)
+    if request.method == "POST":
+        print(request.POST)
+        form = RegistroForm(request.POST, request.FILES or None)  # Se reciben POST y archivos
+       
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save(commit=False)  # No guarda todavía en la BD
+            user.set_password(form.cleaned_data["password"])  # 🔒 Encripta la contraseña
+            user.save()  # Guarda en la BD
+            messages.success(request, "Registro exitoso. Ahora puedes iniciar sesión.")
+            return redirect("login")  
+
+        messages.error(request, "Hubo un error en el registro.")
     else:
         form = RegistroForm()
-    return render(request, "account/registro.html", {"form": form})
 
+    return render(request, "account/registro.html", {"form": form})
 # Vista de login
 def login_view(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            contrasena = form.cleaned_data['contrasena']
-            usuario = authenticate(request, email=email, password=contrasena)
+            password = form.cleaned_data['password']
+            usuario = authenticate(request, username=email, password=password)
+
             if usuario is not None:
                 login(request, usuario)
-                if usuario.rol == 'admin':
-                    return redirect('admin_dashboard')
-                elif usuario.rol == 'secretaria':
-                    return redirect('secretaria_dashboard')
-                elif usuario.rol == 'psicologa':
-                    return redirect('psicologa_dashboard')
+                messages.success(request, f"🎉 ¡Bienvenido, {usuario.email}!") 
+                return redirect('admin_dashboard' if usuario.rol == 'admin' else
+                                'secretaria_dashboard' if usuario.rol == 'secretaria' else
+                                'psicologa_dashboard')
             else:
-                form.add_error(None, "Email o contraseña incorrectos")
-            return render(request, 'myadmin/index.html', {'user': usuario})
+                messages.error(request, "❌ Email o contraseña incorrectos.")  
+
+        else:
+            messages.error(request, "⚠️ Datos inválidos. Revisa el formulario.")
+
     else:
         form = LoginForm()
+
     return render(request, "account/login.html", {"form": form})
+
 
 # Vista de logout
 def logout_view(request):

@@ -33,6 +33,7 @@ class Usuario(AbstractBaseUser):
     email = models.EmailField(unique=True)
     nombre = models.CharField(max_length=100)
     rol = models.CharField(max_length=20, choices=ROLES)
+    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
