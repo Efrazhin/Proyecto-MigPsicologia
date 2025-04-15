@@ -394,23 +394,6 @@
      * Class Definition
      * ====================================================
      */
-    class DirectChat {
-        constructor(element) {
-            this._element = element;
-        }
-        toggle() {
-            if (this._element.classList.contains(CLASS_NAME_DIRECT_CHAT_OPEN)) {
-                const event = new Event(EVENT_COLLAPSED$1);
-                this._element.classList.remove(CLASS_NAME_DIRECT_CHAT_OPEN);
-                this._element.dispatchEvent(event);
-            }
-            else {
-                const event = new Event(EVENT_EXPANDED$1);
-                this._element.classList.add(CLASS_NAME_DIRECT_CHAT_OPEN);
-                this._element.dispatchEvent(event);
-            }
-        }
-    }
     /**
      *
      * Data Api implementation

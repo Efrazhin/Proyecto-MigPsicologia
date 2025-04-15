@@ -26,7 +26,7 @@
       {% endfor %}
     {% endfor %}
   </ul>
-{% endif %}
+  {% endif %}
 
   {% if messages %}
     <div class="alert-container">
@@ -63,9 +63,6 @@
       </button>
     </form>
 
-    <p class="mt-4 text-center text-sm text-gray-600">
-      ¿No tienes cuenta? <a href="{% url 'registro' %}" class="text-blue-500 hover:underline">Regístrate</a>
-    </p>
   </div>
 
 </body>

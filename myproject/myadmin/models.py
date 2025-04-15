@@ -4,6 +4,10 @@ from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.utils import timezone
+import datetime
+from encrypted_model_fields.fields import EncryptedCharField
+
 
 # ---------------------------
 # Usuario personalizado
@@ -180,3 +184,15 @@ class InscripcionCurso(models.Model):
 
     def __str__(self):
         return f"{self.cliente} inscrito en {self.curso}"
+
+#------------------------------
+# Verificacion de 2 pasos
+#------------------------------
+
+class CodigoVerificacion(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    codigo = models.CharField(max_length=6)
+    creado_en = models.DateTimeField(auto_now_add=True)
+
+    def es_valido(self):
+        return timezone.now() < self.creado_en + datetime.timedelta(minutes=5)

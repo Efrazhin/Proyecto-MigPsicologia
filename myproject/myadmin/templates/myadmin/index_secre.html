@@ -85,7 +85,6 @@
     {% endif %}
 
     <div class="app-wrapper">
-      
       <!------------------------------Barra superior " NavBar "------------------------------>
       <nav class="app-header navbar navbar-expand bg-body">
         <!--begin::Container-->
@@ -104,8 +103,6 @@
                 Cerrar Sesión
               </button>
             </form>
-            <a class="nav-link" href="{% url 'registro' %}">Registrar usuarios</a>
-            <a class="nav-link" href="{% url 'dashboard' %}">Home / Dashboard </a>
             {% endif %}
           </ul>
           <!--end::Start Navbar Links-->
@@ -208,13 +205,13 @@
                 </a>
                 <ul class="nav nav-treeview" id="pacientesSub" style="display: none; padding-left: 1rem;">
                   <li class="nav-item">
-                    <a href="{% url 'ag_paciente' %}" class="nav-link">
+                    <a href="#" class="nav-link">
                       <i class="bi bi-plus-circle"></i>
                       <p>Agregar paciente</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{% url 'buscar_paciente' %}" class="nav-link">
+                    <a href="#" class="nav-link">
                       <i class="bi bi-search"></i>
                       <p>Buscar paciente</p>
                     </a>
@@ -258,6 +255,7 @@
         </div>
         <!--end::Sidebar Wrapper-->
       </aside>
+
       <!-------------------------Fin de la Barra Laterael----------------------->
 
 
@@ -266,7 +264,6 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        {% block content %}
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -380,7 +377,6 @@
           <!--end::Container-->
         </div>
         <!--end::App Content-->
-        {% endblock %}
       </main>
       <!--end::App Main-->
 
