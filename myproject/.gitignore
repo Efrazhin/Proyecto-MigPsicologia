@@ -13,25 +13,30 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Archivos de base de datos
+# Base de datos (SQLite)
 db.sqlite3
 *.sqlite3
 
 # Archivos de log
 *.log
 
-# Archivos de caché
+# Archivos de caché / temporales
 *.cache
 *.tmp
 
-# Archivos de configuración de IDEs
+# IDEs
 .vscode/
 .idea/
 
-# Archivos del sistema operativo
+# Sistema operativo
 .DS_Store
 Thumbs.db
 
-# Archivos de migraciones innecesarios (opcional)
+# Archivos de migraciones innecesarios (pero subís los .py)
 **/migrations/*.pyc
 **/migrations/__pycache__/
+
+# Empaquetado (opcional si hacés builds)
+*.egg-info/
+dist/
+build/

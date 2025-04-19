@@ -426,7 +426,7 @@ CREATE TABLE `myadmin_usuario` (
 --
 
 INSERT INTO `myadmin_usuario` (`id`, `password`, `last_login`, `email`, `nombre`, `rol`, `is_active`, `is_staff`, `profile_picture`) VALUES
-(1, 'pbkdf2_sha256$720000$5QhkNWNjhnP1D2StOWg5Bc$v1YSN46bS5kaD0sFMJAcPu5JvqmYmxFTUgVHwjiMu5I=', '2025-04-12 06:11:39.193273', 'germanvives40@gmail.com', 'german vives', 'admin', 1, 0, ''),
+(1, 'ger1234', '2025-04-12 06:11:39.193273', 'germanvives40@gmail.com', 'german vives', 'admin', 1, 0, ''),
 (2, 'pbkdf2_sha256$720000$VjWT353gzd1iUdlkda6ij7$Zm/wLmEVZRtqCAaTdTHlPxyFSnpSreu1aaOGYG8Rzp8=', '2025-04-12 05:54:46.452754', 'germanvives70@gmail.com', 'german vives', 'secretaria', 1, 0, 'profile_pics/Logo-Basualdo_IoTEo2G.jpeg'),
 (3, 'pbkdf2_sha256$720000$NI6JTJnC8iVZxmwyBaEqaO$nnk3RZgtt/Q7acAHWzQDhnT2huH1WTN4WyriA1gD6ZQ=', '2025-04-15 06:27:55.125279', 'efrainbasualdo20@gmail.com', 'german vives', 'psicologa', 1, 0, 'profile_pics/ftoperfil_iqgo4I6.png'),
 (4, 'pbkdf2_sha256$720000$VqPRSwgnxrUtPaftzhScHP$Pw1HuAqLQRqotpZ2NQooLL4oc+iSdTidvREjBW/dsq4=', '2025-04-15 05:54:59.081345', 'efrabasu@gmail.com', 'efrain re crack', 'admin', 1, 0, 'profile_pics/ftoperfil_nob38BM.png'),

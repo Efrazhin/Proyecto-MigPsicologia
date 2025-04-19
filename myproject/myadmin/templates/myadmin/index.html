@@ -98,12 +98,6 @@
               </a>
             </li>
             {% if user.is_authenticated %}
-            <form action="{% url 'logout' %}" method="post">
-              {% csrf_token %}
-              <button type="submit" class="nav-link">
-                Cerrar Sesión
-              </button>
-            </form>
             <a class="nav-link" href="{% url 'registro' %}">Registrar usuarios</a>
             <a class="nav-link" href="{% url 'dashboard' %}">Home / Dashboard </a>
             {% endif %}
@@ -156,9 +150,14 @@
                 <!--end::Menu Body-->
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
+                  <!-- falta poner pagina para gestionar perfil -->
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
-                </li>
+                  <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link">
+                      Cerrar Sesión
+                    </button>
+                  </form>                </li>
                 <!--end::Menu Footer-->
               </ul>
             </li>
